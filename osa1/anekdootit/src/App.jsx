@@ -38,6 +38,8 @@ const App = () => {
     return props.indexOf(maxPisteet)
   }
   const maxPisteetIndex = getMax(pisteet)
+  console.log(anecdotes)
+  console.log(alkuPisteet)
   return (
     <div>
       <h1>Anecdote of the day</h1>
