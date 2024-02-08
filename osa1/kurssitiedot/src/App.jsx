@@ -11,7 +11,7 @@ const App = () => {
     lkm: 7
   },
   {
-    name: 'Using props to pass data',
+    name: 'State of a component',
     lkm: 14
   }
 ]
