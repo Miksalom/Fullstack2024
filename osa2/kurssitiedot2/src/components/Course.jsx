@@ -7,7 +7,7 @@ const Header = (props) =>{
     console.log(props)
     return (
       <div>
-        <h1>{props.course.name}</h1>
+        <h2>{props.course.name}</h2>
       </div>
     )
 }
@@ -32,14 +32,27 @@ const Content = ({parts}) =>{
       </div>
     )
 }
-
-
-const Course = ({course}) => {
+const Total = ({parts}) => {
+  const sum = parts.reduce((s, part) => s += part.exercises, 0)
+  
+  return (
+    <div>
+      <b>total of exercises {sum}</b>
+    </div>
+  )
+}
+const Course = ({courses}) => {
     return (
         <div>
-          <Header course={course}/>
-          <Content parts={course.parts} />
-    
+          <h1>Web development curriculum</h1>
+          {courses.map(course =>
+          <div key={course.id} >
+            <Header course={course}/>
+            <Content parts={course.parts} />
+            <Total parts={course.parts} />
+          </div>
+          )}
+          
         </div>
       )
 }
